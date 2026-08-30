@@ -1,0 +1,21 @@
+{
+  "title": "SCPN MIF Plasma Jet Core",
+  "description": "Governed device-family repository for the plasma-jet magneto-inertial fusion configuration within the SCPN Reactor Systems Research Group. Currently architecture-only: boundary contracts, CONTROL adapter specification, and validation tooling, with no implemented reactor capability.",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "AGPL-3.0-or-later",
+  "creators": [
+    {
+      "name": "Šotek, Miroslav",
+      "affiliation": "ANULUM, Marbach SG, Switzerland",
+      "orcid": "0009-0009-3560-0851"
+    }
+  ],
+  "keywords": [
+    "plasma-jet magneto-inertial fusion",
+    "plasma liner",
+    "compact toroid target",
+    "fusion energy",
+    "control systems architecture"
+  ]
+}
