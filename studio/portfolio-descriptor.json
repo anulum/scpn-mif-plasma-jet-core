@@ -10,6 +10,11 @@
       "evidence_maturity": "computational_prototype",
       "evidence_pointer": "VALIDATION.md#device-configuration-model",
       "identifier": "device_configuration_model"
+    },
+    {
+      "evidence_maturity": "computational_prototype",
+      "evidence_pointer": "VALIDATION.md#diagnostic-and-clock-semantics",
+      "identifier": "diagnostic_clock_semantics"
     }
   ],
   "configurations": [
@@ -51,7 +56,7 @@
     "manifest_path": "reactor-domain.json",
     "manifest_schema": "scpn.reactor-domain.v1",
     "manifest_schema_version": "1.0.0",
-    "manifest_sha256": "521f2fb8f67d0e2b54ea609a102e4fa2f1c1a870990f8c46c3ce15feb4bf1cc7",
+    "manifest_sha256": "9c7e7fb0ebcf42ff84acb3d0845a71de2c8b107e575ba6575e00eaced7a54a15",
     "repository": "SCPN-MIF-PLASMA-JET-CORE"
   },
   "spo_registry": {
