@@ -8,6 +8,11 @@ Contact: www.anulum.li | protoscience@anulum.li
 SCPN MIF Plasma Jet Core — README
 -->
 
+<div align="center">
+  <img src="docs/assets/repo_header.png"
+       alt="SCPN MIF Plasma Jet Core — A Liner Made Of Jets">
+</div>
+
 # SCPN MIF Plasma Jet Core
 
 Governed device-family repository for plasma-jet magneto-inertial fusion
