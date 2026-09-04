@@ -201,3 +201,63 @@ gate:
   domain (`clk_facility` root, `clk_shot` member); multi-domain rules
   are exercised by test-constructed plans. Scopes are declarations;
   `mapping_state` stays `unmapped`.
+
+## Level-0 device physics
+
+Evidence record of the `level0_device_physics` capability
+(`computational_prototype`; design record: `docs/adr/0005-level0-device-physics.md`).
+
+What is exercised, all under the 100 % statement-and-branch coverage gate:
+
+- **The array as a forming liner.** Its mass and kinetic energy in SI; the
+  half-angle one jet subtends at the centre; the fraction of the sphere
+  the caps add up to, checked monotone in both the count and the jet
+  radius; the shell density of the liner the jets are meant to form; and
+  its ram pressure.
+- **A spherical convergence, not a cylindrical one.** The density gain is
+  the volume ratio `(r_0/r)^3` and the temperature gain
+  `(r_0/r)^(3(gamma-1))`. At `gamma = 5/3` that exponent is **exactly
+  2.0** in binary, which was measured: the cylindrical families'
+  `2(gamma-1)` is 1.3333333333333335 and is not exactly four thirds, so
+  the equality is written here and could not be written there. The
+  non-integer power goes through the shared library's deterministic
+  kernel.
+- Every refusal branch: a jet radius that does not fit on its launch
+  sphere; a count below one, including a boolean; a radius, density or
+  speed that is zero, negative, infinite or not-a-number; a convergence
+  ratio that does not converge, checked on both relations; and an
+  adiabatic index that would not heat.
+- Canonical serialisation, digest identity and stability, digest movement
+  when the convergence moves, and the two halves of the record agreeing on
+  where the implosion starts.
+
+Anchoring — three printed numbers that check one another:
+
+- **Printed** by Hsu et al.: 30 jets, 50 km/s, a total liner mass of
+  300 mg, a total kinetic energy of 376 kJ, a jet radius of 5 cm, an
+  initial mass density of 6.63e-4 kg/m^3, and a vacuum chamber 3 m across.
+- The **per-jet mass is derived** and exact: 300 mg over 30 jets is 10 mg.
+- The **energy checks the mass and the speed**: half the printed mass
+  times the printed speed squared is 375.0 kJ against the printed 376 kJ.
+  Asserted at half a per cent, not as an equality, because the source
+  rounds its energy to three figures. Measured agreement 0.27 %.
+- The **density pins the one declared value**. The source prints no launch
+  radius. The radius at which the printed mass over a shell one printed
+  jet diameter thick gives the printed density is 0.60 m, inside the
+  printed chamber; the fixture declares that and a test asserts the
+  density comes back to better than a tenth of a per cent.
+- **The printed array does not cover the sphere** — about five per cent —
+  and a test asserts it, which is why the filed source is a study of
+  whether the jets merge rather than an assertion that they do.
+
+Bounded claims — what is NOT claimed:
+
+- **The merging of discrete jets into a liner is not modelled.** The solid
+  angle reported is a sum of cap areas, not a coverage map: caps cannot
+  tile a sphere, so a value above one means they overlap somewhere and
+  says nothing about whether any point is left bare.
+- The compressed density and temperature are the loss-free limits; both
+  are upper bounds, never predictions.
+- No equation of motion, equation of state or transport equation is
+  solved; no yield, gain, confinement or breakeven statement is made; and
+  no value describes or validates a real machine.

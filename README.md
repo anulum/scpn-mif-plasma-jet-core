@@ -22,14 +22,19 @@ repository is the designated owner of device-level truth for the
 registry (converging plasma-jet liner).
 
 **Evidence maturity: `computational_prototype`** (per-capability; ADR 0002).
-Two capabilities are implemented: the device configuration model —
+Three capabilities are implemented: the device configuration model —
 validated parameter objects with documented consistency estimates,
 canonical serialisation, and a data-only SPO registry pin
 (evidence: `VALIDATION.md#device-configuration-model`) — and the
 diagnostic and clock semantics model — synthetic channel and clock
 declarations aligned fail-closed with the pinned SPO observability
 catalogue (ADR 0003, evidence:
-`VALIDATION.md#diagnostic-and-clock-semantics`). No parameter set or
+`VALIDATION.md#diagnostic-and-clock-semantics`); and level-0 device
+physics — the jet array as a forming liner, including how much of the
+sphere its jets actually add up to, and what a spherical convergence does
+to what it encloses, anchored on an array whose printed numbers check one
+another three ways (ADR 0005, evidence:
+`VALIDATION.md#level-0-device-physics`). No parameter set or
 channel describes any real machine or diagnostic; the claim inventory
 is empty and verified by the domain validator.
 
