@@ -380,9 +380,9 @@ class DiagnosticPlan:
                         message=(
                             "declared merge-asymmetry band "
                             f"{channel.max_signal_frequency_hz:.1f} "
-                            "Hz is outside the jet merge and "
-                            "compression asymmetry range "
-                            "10 kHz-100 MHz (Hsu 2012)"
+                            "Hz is outside the declared merge-asymmetry "
+                            "design band 10 kHz-100 MHz (synthetic; not a "
+                            "value from a source)"
                         ),
                     )
                 )
@@ -396,9 +396,9 @@ class DiagnosticPlan:
                         field=f"channels[{channel.identifier}].timing_uncertainty_s",
                         message=(
                             f"timing uncertainty {channel.timing_uncertainty_s:.2e} s"
-                            " is coarser than the sub-us "
-                            "jet-arrival spread of merging arrays "
-                            "(Hsu 2012)"
+                            " is coarser than the declared 100 ns "
+                            "jet-arrival design bound (synthetic; not a "
+                            "value from a source)"
                         ),
                     )
                 )
@@ -409,8 +409,8 @@ class DiagnosticPlan:
                         message=(
                             "acquisition window "
                             f"{channel.acquisition_duration_s:.2e} s is "
-                            "longer than the jet merge-and-compression scale of "
-                            "up to ~100 us (Hsu 2012)"
+                            "longer than the declared ~100 us shot-duration "
+                            "bound (synthetic; not a value from a source)"
                         ),
                     )
                 )
