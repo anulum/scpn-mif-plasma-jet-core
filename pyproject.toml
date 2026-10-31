@@ -146,6 +146,10 @@ max-statements = 56
 "tests/test_observability_transformations.py" = ["FBT001"]
 # the same rule and the same reason: the boolean is the case under test
 "tests/test_physics_array.py" = ["FBT001"]
+# the enrollment test lists the tracked tree with one fixed `git ls-files`
+# vector resolved through shutil.which, without a shell or untrusted input
+# (scope of S603)
+"tests/test_surface_enrollment.py" = ["S603"]
 # preflight executes fixed argument vectors of repository gates without a
 # shell and without untrusted input (scope of S603/S607)
 "tools/preflight.py" = ["S603", "S607"]
