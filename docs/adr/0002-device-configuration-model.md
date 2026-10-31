@@ -36,10 +36,10 @@ follow the family pilot.
    converging liner that defines plasma-jet magneto-inertial fusion.
 4. Derived quantities from standard mechanics: per-jet and total
    kinetic energy ``E = n m v^2 / 2``. Advisory finding, reported by
-   `consistency_report()` and never clamped: a jet count below ~30,
-   under which a spherically convergent plasma liner is not formed in
-   the documented gun-array designs (S. C. Hsu et al., IEEE Trans.
-   Plasma Sci. 40 (2012) 1287).
+   `consistency_report()` and never clamped: a jet count below a
+   declared 30. Thirty is the jet count of the PLX design in the filed
+   related preprint of S. C. Hsu et al. (arXiv:1201.1879, PDF pp. 2-4);
+   the preprint states no minimum below which a liner is not formed.
 5. Repository-level `evidence_maturity` = the highest state claimed by
    any capability entry; per-capability states are the authoritative
    claim surface.
@@ -57,3 +57,12 @@ follow the family pilot.
 - Later lanes (launch/merging/compression diagnostic semantics with
   dual clocks, safety envelope) build on these types; maturity advances
   per capability only with the evidence the family standard requires.
+
+## Amendment 2026-10-31
+
+The array-size finding said that a spherically convergent liner is not
+formed below about 30 jets in the documented gun-array designs, credited
+to Hsu et al., IEEE Trans. Plasma Sci. 40 (2012) 1287 (not on file). The
+filed related preprint (arXiv:1201.1879) shows a 30-jet design and its
+simulation but prints no such minimum. The size is now named declared.
+No value or check changed.

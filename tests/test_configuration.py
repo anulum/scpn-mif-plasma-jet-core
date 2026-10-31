@@ -75,6 +75,7 @@ def test_consistency_report_clean_and_finding() -> None:
     findings = sparse.consistency_report()
     assert len(findings) == 1
     assert "spherically convergent" in findings[0].message
+    assert "declared spherically convergent" in findings[0].message
 
 
 def test_canonical_round_trip_and_digest() -> None:

@@ -10,10 +10,9 @@
 
 The derived quantities implement standard mechanics and nothing more:
 per-jet and total kinetic energy ``E = n m v^2 / 2``. They are rough
-consistency instruments with documented applicability bounds
-(spherically convergent gun arrays; S. C. Hsu et al., IEEE Trans.
-Plasma Sci. 40 (2012) 1287); no claim about any real machine follows
-from them.
+consistency instruments with documented applicability bounds (the
+declared spherically convergent array size; see the configuration
+module); no claim about any real machine follows from them.
 """
 
 from __future__ import annotations

@@ -12,7 +12,7 @@ Every image is original generated artwork derived from this repository's
 own domain surface — the spherically convergent jet array, the
 array-size gate the configuration model checks, and the merge-to-liner
 sequence. The jet counts drawn are the repository's own constants: the
-hard minimum of two guns and the documented convergent array size. The
+hard minimum of two guns and the declared convergent array size. The
 right-hand text panel states only facts backed by the repository
 itself.
 
@@ -54,8 +54,8 @@ SPHERICAL_ARRAY_MIN_JETS = 30
 TITLE_METRICS: list[tuple[str, str]] = [
     ("Device Configuration", "plasma_jet_mif · converging jet liner"),
     ("Hard Invariant", "multi-jet array · at least two guns"),
-    ("Array Gate", "below 30 jets flagged (not convergent)"),
-    ("Reference", "Hsu et al., IEEE TPS 40 (2012) 1287"),
+    ("Array Gate", "below declared 30 jets flagged"),
+    ("Reference", "Hsu et al., arXiv:1201.1879"),
     ("Plan Envelope", "v1.1.0 · synthetic · review-only"),
     ("Quality Gates", "100% branch cov · mypy --strict"),
 ]
@@ -330,7 +330,7 @@ def generate_array_gate() -> None:
             f"{MIN_JET_COUNT} jets",
             "hard minimum · accepted",
             RED,
-            "not spherically convergent · FLAGGED",
+            "below declared size · FLAGGED",
         ),
         (
             5.0,
@@ -344,9 +344,9 @@ def generate_array_gate() -> None:
             8.15,
             SPHERICAL_ARRAY_MIN_JETS,
             f"{SPHERICAL_ARRAY_MIN_JETS} jets",
-            "documented convergent array",
+            "declared array size",
             GREEN,
-            "Hsu et al., IEEE TPS 40 (2012) 1287",
+            "PLX design, arXiv:1201.1879",
         ),
     ]
     for centre_x, jets, title, subtitle, colour, note in panels:
@@ -409,7 +409,7 @@ def generate_array_gate() -> None:
     ax.text(
         5.0,
         -2.85,
-        "two guns pass the hard rule; only the documented array passes "
+        "two guns pass the hard rule; only the declared array passes "
         "the convergence check",
         color=PROBE,
         fontsize=8,

@@ -10,13 +10,15 @@
 
 A :class:`DeviceConfiguration` composes a validated jet array under the
 single registry identifier this repository owns. The multi-jet
-requirement is hard; an array below the documented spherically
-convergent size is flagged (Hsu et al., IEEE TPS 40 (2012) 1287; the filed
-related preprint arXiv:1201.1879 shows the 30-jet array in Fig. 1, PDF p. 3).
-Serialisation is canonical (sorted keys, no NaN or infinity accepted
-anywhere) and the SHA-256 digest of those bytes identifies the exact
-parameter set. The registry binding is a data pin only — this package
-never imports SCPN Phase Orchestrator code.
+requirement is hard; an array below a declared size of 30 jets is
+flagged. Thirty is the jet count of the PLX design in the filed related
+preprint (Hsu et al., arXiv:1201.1879: 30 jets, PDF pp. 2-3; a 30-jet
+implosion tending towards good spherical symmetry, PDF p. 4); the
+preprint states no minimum, and the cited Hsu et al., IEEE TPS 40 (2012)
+1287, is not on file. Serialisation is canonical (sorted keys, no NaN or
+infinity accepted anywhere) and the SHA-256 digest of those bytes
+identifies the exact parameter set. The registry binding is a data pin
+only — this package never imports SCPN Phase Orchestrator code.
 """
 
 from __future__ import annotations
@@ -133,8 +135,8 @@ class DeviceConfiguration:
         Returns
         -------
         tuple of ConsistencyFinding
-            Advisory findings from the documented estimates; empty when
-            the array reaches the documented spherically convergent
+            Advisory findings from the declared estimates; empty when
+            the array reaches the declared spherically convergent
             size. Findings are advisory instruments, not machine
             claims.
         """
@@ -145,7 +147,7 @@ class DeviceConfiguration:
                     field="jets.jet_count",
                     message=(
                         f"jet count {self.jets.jet_count} is below the "
-                        f"documented spherically convergent array size "
+                        f"declared spherically convergent array size "
                         f"{SPHERICAL_ARRAY_MIN_JETS}"
                     ),
                 )

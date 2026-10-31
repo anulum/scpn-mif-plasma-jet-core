@@ -82,9 +82,11 @@ What is exercised, all under the 100 % statement-and-branch coverage gate:
   multiple jets) — every rejection branch is tested.
 - The standard-mechanics kinetic-energy relations (per jet and total)
   as documented derived quantities, with an advisory finding for arrays
-  below the documented spherically convergent size ~30 jets (Hsu et
-  al., IEEE Trans. Plasma Sci. 40 (2012) 1287; read in the filed related
-  arXiv:1201.1879, Fig. 1, PDF p. 3), reported and never clamped.
+  below the declared spherically convergent size of 30 jets (the jet
+  count of the PLX design in the filed related arXiv:1201.1879, Fig. 1,
+  PDF p. 3; the preprint prints no minimum, and the earlier claim that a
+  liner is not formed below 30 was removed on 2026-10-31), reported and
+  never clamped.
 - Canonical serialisation (sorted keys, NaN/infinity rejected on both
   emit and parse), SHA-256 digest identity, and a strict round-trip
   parser that refuses unknown fields.
