@@ -23,6 +23,14 @@ SCPN MIF Plasma Jet Core — CHANGELOG
   them. Property and fuzz tests cover arbitrary bytes, single-byte
   mutations, field substitutions and overflowing number literals.
 
+### Added
+
+- An installed-wheel job in the required CI gate: the wheel is built
+  without build isolation from hash-locked `setuptools` and `wheel`
+  (`requirements-build.txt`), installed with the hash-locked kernel library
+  into a clean environment and exercised from outside the checkout by
+  `tools/installed_package_check.py`.
+
 ### Changed
 
 - The documentation gate reads only files git would publish, so a
