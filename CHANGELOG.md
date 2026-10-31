@@ -25,6 +25,11 @@ SCPN MIF Plasma Jet Core — CHANGELOG
 
 ### Added
 
+- README badge block for the evidence this repository has earned: the CI,
+  CodeQL, pre-commit, security-audit and docs workflows, the AGPL-3.0-or-later
+  licence, the commercial licence route and GitHub Sponsors. A contract test
+  binds the block exactly and forbids unearned service badges.
+
 - An installed-wheel job in the required CI gate: the wheel is built
   without build isolation from hash-locked `setuptools` and `wheel`
   (`requirements-build.txt`), installed with the hash-locked kernel library
