@@ -12,16 +12,6 @@ SCPN MIF Plasma Jet Core — CHANGELOG
 
 ## [Unreleased]
 
-### Security
-
-- `configuration_from_bytes` refuses duplicate JSON members and any document
-  that is not byte-for-byte the canonical serialisation, as the
-  diagnostic-plan and plan-envelope parsers already did; a duplicate member
-  was resolved last-wins.
-- All three public parsers report JSON nested deeper than the decoder can
-  follow as their own error type; a `RecursionError` previously escaped
-  them. Property and fuzz tests cover arbitrary bytes, single-byte
-  mutations, field substitutions and overflowing number literals.
 
 ### Added
 
@@ -39,39 +29,6 @@ SCPN MIF Plasma Jet Core — CHANGELOG
   (`requirements-build.txt`), installed with the hash-locked kernel library
   into a clean environment and exercised from outside the checkout by
   `tools/installed_package_check.py`.
-
-### Changed
-
-- The milligram-to-kilogram factor is renamed `KG_PER_MG` (it was
-  `MG_PER_KG`, documented as milligrams per kilogram, which is the inverse of
-  its value 1e-6). The value is unchanged; a test binds both unit factors.
-
-- `scpn_mif_plasma_jet_core.observability` is now a package with one module per
-  responsibility — vocabulary, catalogue binding, frames, clocks, signals and
-  channels, plan composition, record parsing — behind the unchanged public
-  import path. The 34 public names, canonical plan bytes and refusal
-  behaviour are unchanged.
-
-- The documentation gate reads only files git would publish, so a
-  git-ignored private tree is never link-checked (it failed the gate locally
-  while passing in CI, where that tree is absent). Hooks without their own
-  stage list run before a commit and before a push only; commit-msg runs the
-  trailer guard alone.
-- Local and hosted gates check the same cohorts: `make typecheck` now checks
-  `src/` as CI does, `make test` measures `src/` as CI does, `conftest.py`
-  joins the typed cohort everywhere, and `make validate` runs the workflow
-  audit. A parity test binds the make targets and the preflight plan to the
-  hosted workflows, and an enrollment test maps every tracked file to exactly
-  one gated surface.
-
-- Install every CI dependency from hash-locked requirement sets with
-  `--require-hashes`: the development toolchain, the audit and inventory
-  tools, and the first-party kernel library by source-archive digest at the
-  commit pinned in `pyproject.toml`. `make lock` regenerates the sets; the
-  package itself installs with `--no-deps`. Toolchain, action and
-  interpreter pins move to their newest releases.
-
-### Added
 
 - Diagnostic-plan depth: per-channel signal inventories, frame
   transformations with a fixed kind-admissibility table and connectivity
@@ -160,6 +117,35 @@ SCPN MIF Plasma Jet Core — CHANGELOG
 
 ### Changed
 
+- The milligram-to-kilogram factor is renamed `KG_PER_MG` (it was
+  `MG_PER_KG`, documented as milligrams per kilogram, which is the inverse of
+  its value 1e-6). The value is unchanged; a test binds both unit factors.
+
+- `scpn_mif_plasma_jet_core.observability` is now a package with one module per
+  responsibility — vocabulary, catalogue binding, frames, clocks, signals and
+  channels, plan composition, record parsing — behind the unchanged public
+  import path. The 34 public names, canonical plan bytes and refusal
+  behaviour are unchanged.
+
+- The documentation gate reads only files git would publish, so a
+  git-ignored private tree is never link-checked (it failed the gate locally
+  while passing in CI, where that tree is absent). Hooks without their own
+  stage list run before a commit and before a push only; commit-msg runs the
+  trailer guard alone.
+- Local and hosted gates check the same cohorts: `make typecheck` now checks
+  `src/` as CI does, `make test` measures `src/` as CI does, `conftest.py`
+  joins the typed cohort everywhere, and `make validate` runs the workflow
+  audit. A parity test binds the make targets and the preflight plan to the
+  hosted workflows, and an enrollment test maps every tracked file to exactly
+  one gated surface.
+
+- Install every CI dependency from hash-locked requirement sets with
+  `--require-hashes`: the development toolchain, the audit and inventory
+  tools, and the first-party kernel library by source-archive digest at the
+  commit pinned in `pyproject.toml`. `make lock` regenerates the sets; the
+  package itself installs with `--no-deps`. Toolchain, action and
+  interpreter pins move to their newest releases.
+
 - Studio portfolio descriptor schema ratified at version 1.1.0 after
   downstream review, before any consumer adoption (1.0.0 superseded
   unconsumed): canonical JSON Schema published in-repository with a strict
@@ -168,3 +154,14 @@ SCPN MIF Plasma Jet Core — CHANGELOG
   capability item shape, and a machine-protection object (independent
   final-veto owner with availability `not_assessed`) replacing the former
   boolean flag.
+
+### Security
+
+- `configuration_from_bytes` refuses duplicate JSON members and any document
+  that is not byte-for-byte the canonical serialisation, as the
+  diagnostic-plan and plan-envelope parsers already did; a duplicate member
+  was resolved last-wins.
+- All three public parsers report JSON nested deeper than the decoder can
+  follow as their own error type; a `RecursionError` previously escaped
+  them. Property and fuzz tests cover arbitrary bytes, single-byte
+  mutations, field substitutions and overflowing number literals.
