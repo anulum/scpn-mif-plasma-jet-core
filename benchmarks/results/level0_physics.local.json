@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-10-31T06:03:33.308362+00:00",
+  "label": "local",
+  "parameters": {
+    "points": 20000,
+    "record_points": 2000,
+    "repeats": 20,
+    "warmup": 3
+  },
+  "platform": {
+    "commit": "e4d6e5e889ad713961f1631d83c3ebc4756a5b6a",
+    "cpu_model": "11th Gen Intel(R) Core(TM) i5-11600K @ 3.90GHz",
+    "isolated_cores": false,
+    "load_average_1min_at_start": "4.44",
+    "machine": "x86_64",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3"
+  },
+  "results": [
+    {
+      "backend": "python_floor",
+      "name": "closed_forms",
+      "stats": {
+        "max_us_per_point": 2.91273545,
+        "mean_us_per_point": 2.4293002925,
+        "min_us_per_point": 2.1637199000000003,
+        "p50_us_per_point": 2.3844842,
+        "p95_us_per_point": 2.8529408,
+        "p99_us_per_point": 2.91273545,
+        "throughput_points_per_s": 419377.9099060501
+      },
+      "status": "measured"
+    },
+    {
+      "backend": "rust_native",
+      "name": "closed_forms",
+      "stats": null,
+      "status": "unavailable: this package has no native crate; the level-0 kernels use + - * /, the constant pi, the platform asin and cos, and one real power evaluated by the shared library's deterministic power kernel, and the native decision of audit plan Q01 awaits the owner"
+    },
+    {
+      "backend": "python_floor",
+      "name": "level0_record",
+      "stats": {
+        "max_us_per_point": 45.928594,
+        "mean_us_per_point": 37.762550525,
+        "min_us_per_point": 32.256671,
+        "p50_us_per_point": 37.6005245,
+        "p95_us_per_point": 44.6320775,
+        "p99_us_per_point": 45.928594,
+        "throughput_points_per_s": 26595.373689534572
+      },
+      "status": "measured"
+    },
+    {
+      "backend": "rust_native",
+      "name": "level0_record",
+      "stats": null,
+      "status": "unavailable: this package has no native crate; the level-0 kernels use + - * /, the constant pi, the platform asin and cos, and one real power evaluated by the shared library's deterministic power kernel, and the native decision of audit plan Q01 awaits the owner"
+    }
+  ],
+  "schema": "scpn-mif-plasma-jet-core.level0-physics-benchmark.v1"
+}
