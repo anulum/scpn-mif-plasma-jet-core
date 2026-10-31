@@ -14,9 +14,14 @@ title: SCPN MIF Plasma Jet Core
 abstract: >-
   Governed device-family repository for the plasma-jet magneto-inertial
   fusion configuration within the SCPN Reactor Systems Research Group.
-  Currently architecture-only: boundary contracts, CONTROL adapter
-  specification, and validation tooling, with no implemented reactor
-  capability.
+  Evidence maturity computational_prototype: a validated device
+  configuration model, diagnostic and clock semantics aligned with the
+  SCPN Phase Orchestrator observability catalogue, and level-0 device
+  physics (the mass, kinetic energy, ram pressure and spherical coverage
+  fraction of a declared jet array, and ideal spherical density and
+  adiabatic compression recorded as upper bounds). Parameter sets are
+  synthetic or anchored on a filed public source; no real machine is
+  described, and the claim inventory is empty.
 authors:
   - family-names: Šotek
     given-names: Miroslav
