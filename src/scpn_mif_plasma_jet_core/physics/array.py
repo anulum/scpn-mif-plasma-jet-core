@@ -45,9 +45,9 @@ from scpn_mif_plasma_jet_core.configuration import DeviceConfiguration
 from scpn_mif_plasma_jet_core.errors import DeviceConfigurationError
 from scpn_mif_plasma_jet_core.parameters import require_positive
 
-#: Milligrams per kilogram, and metres per kilometre; the configuration
+#: Kilograms per milligram, and metres per kilometre; the configuration
 #: declares its array in milligrams and kilometres per second.
-MG_PER_KG: Final = 1.0e-6
+KG_PER_MG: Final = 1.0e-6
 M_PER_KM: Final = 1.0e3
 
 
@@ -278,7 +278,7 @@ def array_state(configuration: DeviceConfiguration, inputs: ArrayInputs) -> Arra
         the field.
     """
     jets = configuration.jets
-    jet_mass = jets.jet_mass_mg * MG_PER_KG
+    jet_mass = jets.jet_mass_mg * KG_PER_MG
     speed = jets.jet_velocity_km_s * M_PER_KM
     total_mass = jets.jet_count * jet_mass
     shell_volume = 4.0 * math.pi * inputs.launch_radius_m**2 * 2.0 * inputs.jet_radius_m

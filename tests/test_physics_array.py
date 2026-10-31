@@ -246,3 +246,15 @@ def test_the_printed_array_does_not_cover_the_sphere() -> None:
     """
     state = array_state(anchor_configuration(), anchor_inputs())
     assert 0.0 < state.solid_angle_coverage < 0.1
+
+
+def test_the_unit_factors_convert_in_the_direction_their_names_say() -> None:
+    """One milligram is 1e-6 kilogram; one kilometre is 1e3 metres."""
+    from scpn_mif_plasma_jet_core.physics import KG_PER_MG, M_PER_KM
+
+    assert KG_PER_MG == 1.0e-6
+    assert M_PER_KM == 1.0e3
+    # A milligram is smaller than a kilogram and a kilometre larger than a
+    # metre, so the factors sit on either side of one.
+    assert KG_PER_MG < 1.0 < M_PER_KM
+    assert math.isclose(10.0 * KG_PER_MG, 1.0e-5, rel_tol=1e-15)

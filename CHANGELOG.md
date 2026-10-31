@@ -42,6 +42,10 @@ SCPN MIF Plasma Jet Core — CHANGELOG
 
 ### Changed
 
+- The milligram-to-kilogram factor is renamed `KG_PER_MG` (it was
+  `MG_PER_KG`, documented as milligrams per kilogram, which is the inverse of
+  its value 1e-6). The value is unchanged; a test binds both unit factors.
+
 - `scpn_mif_plasma_jet_core.observability` is now a package with one module per
   responsibility — vocabulary, catalogue binding, frames, clocks, signals and
   channels, plan composition, record parsing — behind the unchanged public

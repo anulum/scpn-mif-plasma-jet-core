@@ -20,8 +20,8 @@ and the merging of the jets is not modelled. Design record: ADR 0005.
 from __future__ import annotations
 
 from scpn_mif_plasma_jet_core.physics.array import (
+    KG_PER_MG,
     M_PER_KM,
-    MG_PER_KG,
     ArrayInputs,
     ArrayState,
     array_state,
@@ -47,10 +47,10 @@ from scpn_mif_plasma_jet_core.physics.level0 import (
 )
 
 __all__ = [
+    "KG_PER_MG",
     "LEVEL0_NON_CLAIMS",
     "LEVEL0_SCHEMA",
     "LEVEL0_SCHEMA_VERSION",
-    "MG_PER_KG",
     "MONATOMIC_GAMMA",
     "M_PER_KM",
     "SPHERICAL_DIMENSIONS",
