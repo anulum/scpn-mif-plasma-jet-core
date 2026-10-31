@@ -51,7 +51,7 @@ bind. Four candidates apply to the configuration this repository owns: `magneto_
 4. Timing is fail-closed where physics fixes the bound: the Nyquist
    criterion for cyclic channels, a positive event-timing bound, and
    clock resolution at or below that bound. The device-typical checks
-   are advisory only: the jet merge and compression asymmetry range 10 kHz–100 MHz and the sub-µs jet-arrival spread of merging arrays (S. C. Hsu et al., IEEE Trans. Plasma Sci. 40 (2012) 1287).
+   are advisory only: the declared jet merge and compression asymmetry design band 10 kHz–100 MHz and the sub-µs jet-arrival design bound — synthetic bounds, not values from a source (the filed related preprint of S. C. Hsu et al., arXiv:1201.1879, describes µs-scale implosion and pressure times but prints neither).
 5. The reference plan mirrors canonical practice with synthetic
    declarations: a jet-arrival event train (event relative against the jet launch trigger), a convergence-trajectory set (noncyclic), a merge-asymmetry mode set (derived cyclic against the facility clock), and the model-owned synthetic oscillator (simulation clock). Every applicable candidate must be
    planned or explicitly deferred with a reason; every channel is

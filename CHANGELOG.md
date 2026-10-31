@@ -117,6 +117,10 @@ SCPN MIF Plasma Jet Core — CHANGELOG
 
 ### Changed
 
+- The anchor values are bound to pages of the filed arXiv:1201.1879 PDF, and
+  the 30-jet advisory threshold names that related preprint as the source
+  read (the cited IEEE paper is not freely available).
+
 - The milligram-to-kilogram factor is renamed `KG_PER_MG` (it was
   `MG_PER_KG`, documented as milligrams per kilogram, which is the inverse of
   its value 1e-6). The value is unchanged; a test binds both unit factors.

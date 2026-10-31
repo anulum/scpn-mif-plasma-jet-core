@@ -83,8 +83,8 @@ What is exercised, all under the 100 % statement-and-branch coverage gate:
 - The standard-mechanics kinetic-energy relations (per jet and total)
   as documented derived quantities, with an advisory finding for arrays
   below the documented spherically convergent size ~30 jets (Hsu et
-  al., IEEE Trans. Plasma Sci. 40 (2012) 1287), reported and never
-  clamped.
+  al., IEEE Trans. Plasma Sci. 40 (2012) 1287; read in the filed related
+  arXiv:1201.1879, Fig. 1, PDF p. 3), reported and never clamped.
 - Canonical serialisation (sorted keys, NaN/infinity rejected on both
   emit and parse), SHA-256 digest identity, and a strict round-trip
   parser that refuses unknown fields.
@@ -120,7 +120,7 @@ What is exercised, all under the 100 % statement-and-branch coverage gate:
 - A reference plan mirroring canonical practice with synthetic
   declarations: jet-arrival train, convergence trajectory, merge-asymmetry set, synthetic oscillator, each bound to its clock domain.
 - Documented advisory band and timing checks with their sources stated
-  in the code: merge-asymmetry bands of 10 kHz–100 MHz and sub-µs jet arrival (Hsu 2012); findings are reported, never clamped.
+  in the code: the declared merge-asymmetry design band 10 kHz–100 MHz and sub-µs jet-arrival design bound — synthetic bounds; the filed related preprint (arXiv:1201.1879) describes µs-scale implosion and pressure times (PDF pp. 12–16) but prints neither band; findings are reported, never clamped.
 - Canonical serialisation (sorted keys, NaN/infinity rejected on both
   emit and parse), SHA-256 digest identity, and a strict round-trip
   parser that refuses unknown fields.
@@ -234,9 +234,11 @@ What is exercised, all under the 100 % statement-and-branch coverage gate:
 
 Anchoring — three printed numbers that check one another:
 
-- **Printed** by Hsu et al.: 30 jets, 50 km/s, a total liner mass of
-  300 mg, a total kinetic energy of 376 kJ, a jet radius of 5 cm, an
-  initial mass density of 6.63e-4 kg/m^3, and a vacuum chamber 3 m across.
+- **Printed** by Hsu et al. (arXiv:1201.1879, the filed related preprint):
+  30 jets (Fig. 1, PDF p. 3), 50 km/s and a jet radius of 5 cm (PDF p. 2),
+  a total liner mass of 300 mg, a total kinetic energy of 376 kJ and an
+  initial mass density of 6.63e-4 kg/m^3 (PDF p. 9), and a vacuum chamber
+  3 m across (PDF p. 4). Page numbers are those of the filed PDF.
 - The **per-jet mass is derived** and exact: 300 mg over 30 jets is 10 mg.
 - The **energy checks the mass and the speed**: half the printed mass
   times the printed speed squared is 375.0 kJ against the printed 376 kJ.

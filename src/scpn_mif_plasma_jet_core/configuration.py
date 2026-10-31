@@ -11,7 +11,8 @@
 A :class:`DeviceConfiguration` composes a validated jet array under the
 single registry identifier this repository owns. The multi-jet
 requirement is hard; an array below the documented spherically
-convergent size is flagged (Hsu et al., IEEE TPS 40 (2012) 1287).
+convergent size is flagged (Hsu et al., IEEE TPS 40 (2012) 1287; the filed
+related preprint arXiv:1201.1879 shows the 30-jet array in Fig. 1, PDF p. 3).
 Serialisation is canonical (sorted keys, no NaN or infinity accepted
 anywhere) and the SHA-256 digest of those bytes identifies the exact
 parameter set. The registry binding is a data pin only — this package

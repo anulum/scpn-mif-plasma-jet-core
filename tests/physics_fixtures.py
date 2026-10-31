@@ -11,9 +11,10 @@
 The **reference** pair is synthetic and describes nothing.
 
 The **anchor** pair is the PLX array of S. C. Hsu et al.,
-arXiv:1201.1879 (2012), which prints 30 jets at 50 km/s, a total liner
-mass of 300 mg, a total kinetic energy of 376 kJ, a jet radius of 5 cm and
-a vacuum chamber 3 m across.
+arXiv:1201.1879 (2012), which prints 30 jets (Fig. 1, PDF p. 3) at 50 km/s
+with a jet radius of 5 cm (PDF p. 2), a total liner mass of 300 mg and a
+total kinetic energy of 376 kJ (PDF p. 9), and a vacuum chamber 3 m across
+(PDF p. 4). Page numbers are those of the filed PDF (SHA-256 161b7cc7...).
 
 **The per-jet mass is derived, not printed**, and it follows exactly from
 two printed numbers: 300 mg over 30 jets is 10 mg, and that division is
@@ -45,18 +46,18 @@ from scpn_mif_plasma_jet_core.physics import ArrayInputs
 
 REGISTRY = RegistryBinding(version="1.0.0", digest_sha256="0" * 64)
 
-#: Printed by Hsu et al.: 30 jets at 50 km/s.
+#: Printed by Hsu et al.: 30 jets (PDF p. 3) at 50 km/s (PDF p. 2).
 ANCHOR_JET_COUNT = 30
 ANCHOR_JET_VELOCITY_KM_S = 50.0
-#: Printed: the total liner mass and the total kinetic energy.
+#: Printed: the total liner mass and the total kinetic energy (PDF p. 9).
 ANCHOR_TOTAL_MASS_MG = 300.0
 ANCHOR_TOTAL_KINETIC_ENERGY_KJ = 376.0
 #: Derived exactly from the two printed numbers above.
 ANCHOR_JET_MASS_MG = ANCHOR_TOTAL_MASS_MG / ANCHOR_JET_COUNT
-#: Printed: the jet radius and the vacuum chamber diameter.
+#: Printed: the jet radius (PDF p. 2) and the vacuum chamber diameter (PDF p. 4).
 ANCHOR_JET_RADIUS_M = 0.05
 ANCHOR_CHAMBER_DIAMETER_M = 3.0
-#: Printed: the initial mass density of the liner.
+#: Printed: the initial mass density of the liner (PDF p. 9).
 ANCHOR_INITIAL_DENSITY_KG_M3 = 6.63e-4
 #: Declared, but not arbitrarily. The source prints the chamber and not
 #: the sphere the jets are launched from, so a value has to be chosen —
